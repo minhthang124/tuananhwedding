@@ -65,6 +65,102 @@ body {
     overflow-wrap: break-word !important;
 }
 
+
+/* Mặc định cho màn hình lớn */
+.event-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các thẻ .event-card xuống hàng khi cần */
+    gap: 20px; /* Khoảng cách giữa các thẻ .event-card */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 600px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 60%; /* Làm cho ảnh chiếm toàn bộ chiều rộng của phần tử chứa */
+    height: auto; /* Đảm bảo tỷ lệ khung hình của ảnh không bị thay đổi */
+    object-fit: fill; /* Đảm bảo ảnh không bị biến dạng */
+}
+
+
+.event-details {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-details h3 {
+    margin: 0; /* Xóa margin mặc định */
+    font-size: 1.2em;
+    color: #000; /* Đảm bảo màu chữ dễ nhìn */
+}
+
+
+.event-details p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-btn {
+    background-color: #4c93ff;
+    color: #fff;
+}
+
+.map-btn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .event-container {
+        flex-direction: column;
+        align-items: center; /* Căn giữa các thẻ .event-card */
+    }
+
+    .event-card {
+        width: 100%; /* Chiếm toàn bộ chiều rộng của màn hình nhỏ */
+        max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    }
+}
+
+/* Responsive cho màn hình trung bình */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .event-card {
+        width: 100%;
+        max-width: 350px; /* Giới hạn chiều rộng tối đa */
+    }
+}
+
+
 .mouse-animation {
     padding: 0.25rem 0.625rem;
     height: 2rem;

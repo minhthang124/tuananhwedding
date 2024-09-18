@@ -3,10 +3,24 @@ export const audio = (() => {
     let music = null;
     let audio = null;
 
+    // Danh sách nhạc
+    const musicList = [
+        './assets/music/sound.mp3',
+        './assets/music/sound1.mp3',
+        './assets/music/sound2.mp3',
+        './assets/music/sound3.mp3',
+        './assets/music/sound4.mp3'
+    ];
+
     const init = () => {
         music = document.getElementById('button-music');
+        
+        // Chọn ngẫu nhiên một bài nhạc từ danh sách
+        const randomIndex = Math.floor(Math.random() * musicList.length);
+        const randomSong = musicList[randomIndex];
 
-        audio = new Audio(music.getAttribute('data-url'));
+        // Tạo đối tượng Audio với bài nhạc ngẫu nhiên
+        audio = new Audio(randomSong);
         audio.currentTime = 0;
         audio.autoplay = false;
         audio.muted = false;
