@@ -85,15 +85,23 @@ body {
     overflow: hidden;
 }
 
+.event-image {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    width: 50%;
+}
+
 .event-image img {
-    width: 60%; /* Làm cho ảnh chiếm toàn bộ chiều rộng của phần tử chứa */
-    height: auto; /* Đảm bảo tỷ lệ khung hình của ảnh không bị thay đổi */
-    object-fit: fill; /* Đảm bảo ảnh không bị biến dạng */
+    width: 95%;              /* Làm cho ảnh chiếm 95% chiều rộng phần tử chứa */
+    height: auto;            /* Đảm bảo tỷ lệ khung hình không bị thay đổi */
+    object-fit: fill; 
+    border-radius: 12px;
 }
 
 
 .event-details {
-    padding: 2rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +131,7 @@ button {
     font-size: 0.9em;
     cursor: pointer;
     transition: background-color 0.3s;
+    justify-content: center;
 }
 
 .calendar-btn {
